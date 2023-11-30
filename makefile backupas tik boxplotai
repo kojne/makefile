@@ -1,0 +1,13 @@
+SHELL := /bin/bash 
+
+GENOME_DIR = /home/ignas/Desktop/Makefile2/unfolded
+IMG_DIR = images
+
+FILES = $(wildcard $(GENOME_DIR)/*.fsa)
+
+all: $(FILES)
+	@mkdir -p $(IMG_DIR)
+	@for file in $^ ; do \
+		/home/ignas/Desktop/Makefile2/create_boxplot.py $$file; \
+	done
+
