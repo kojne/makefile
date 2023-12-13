@@ -23,7 +23,7 @@ def create_boxplot(data, output_filename):
         print(f"No data to plot for {output_filename}.")
         return
     plt.boxplot(data)
-    plt.title("GC Content Boxplot")
+    plt.title(output_filename.split("/")[1].split(".")[0].replace("_"," "))
     plt.ylabel("GC Content")
     plt.savefig(output_filename)
     #plt.show()
